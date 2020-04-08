@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "数据报告",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}
