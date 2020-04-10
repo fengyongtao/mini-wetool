@@ -256,9 +256,10 @@ Page({
    * 分享邀请
    */
   onShareAppMessage: function () {
+    console.log(app.globalData.openid)
     return {
-      title: '有内容的小程序',
-      imageUrl: 'https://test-91f3af.tcb.qcloud.la/sharepic.jpg?sign=6a33faf314c17c7ed2e234911d312b93&t=1585835244',
+      title: 'WETOOL-数据报告',
+      imageUrl: 'https://6d69-mini-wetool-1259281818.tcb.qcloud.la/wetool-poster.jpg?sign=38896e609a9851bc36726ff34613ba19&t=1586517452',
       path: '/pages/index/index?openid=' + app.globalData.openid
     }
   },

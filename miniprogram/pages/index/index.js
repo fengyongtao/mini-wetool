@@ -30,7 +30,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    console.info("测试："+options.openid)
+    console.info("邀请人openid："+ options.openid)
     let that=this
     if (options.openid) {
       let shareOpenId = options.openid;
