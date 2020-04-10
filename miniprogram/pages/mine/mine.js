@@ -104,10 +104,19 @@ Page({
    * 展示微信二维码
    * @param {*} e 
    */
-  showWechatCode: async function (e) {
-    wx.previewImage({
-      urls: [config.wechatUrl],
-      current: config.wechatUrl
+  // showWechatCode: async function (e) {
+  //   wx.previewImaage({
+  //     urls: [config.wechatUrl],
+  //     current: config.wechatUrl
+  //   })
+  // },
+  /**
+   * 跳转到WETOOL介绍页
+   * @param {*} e 
+   */
+  showWetoolIntroduce: function (e) {
+    wx.navigateTo({
+      url: '../mine/introduce/introduce'
     })
   },
   /**

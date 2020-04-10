@@ -1,12 +1,12 @@
 /**
  * 打赏二维码
  */
-var moneyUrl ="https://wetools.store/others/admire-wetool.jpg"
+var moneyUrl ="http://wetools.store/others/admire-wetool.jpg"
 
 /**
  * 公众号二维码
  */
-var wechatUrl ="https://wetools.store/others/wechat-wetool.jpg"
+var wechatUrl ="http://wetools.store/others/wechat-wetool.jpg"
 
 /**
  * 云开发环境
