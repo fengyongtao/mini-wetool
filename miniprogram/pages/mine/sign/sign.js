@@ -11,7 +11,7 @@ Page({
   data: {
     calendarConfig: {
       multi: true, // 是否开启多选,
-      theme: 'elegant', // 日历主题，目前共两款可选择，默认 default 及 elegant，自定义主题在 theme 文件夹扩展
+      theme: 'default', // 日历主题，目前共两款可选择，默认 default 及 elegant，自定义主题在 theme 文件夹扩展
       showLunar: true, // 是否显示农历，此配置会导致 setTodoLabels 中 showLabelAlways 配置失效
       inverse: true, // 单选模式下是否支持取消选中,
       chooseAreaMode: true, // 开启日期范围选择模式，该模式下只可选择时间段
@@ -48,6 +48,19 @@ Page({
         signed: signed == 1
       })
     }
+
+    let that=this
+    app.checkUserInfo(function (userInfo, isLogin) {
+      if (!isLogin) {
+        that.setData({
+          showLogin: true
+        })
+      } else {
+        that.setData({
+          userInfo: userInfo
+        });
+      }
+    });
   },
   /**
    * 日历组件渲染之后
@@ -77,9 +90,8 @@ Page({
    * @param {} e 
    */
   whenChangeMonth: async function (e) {
-
-    let year=util.getYear(new Date())
-    let month=util.getMonth(new Date())
+    let year=e.detail.next.year
+    let month=e.detail.next.month
     let res = await api.getSignedDetail(app.globalData.openid, year.toString(), month.toString())
     console.info(res)
     let toSet = [];
@@ -132,6 +144,8 @@ Page({
       })
       let info = {
         openId: app.globalData.openid,
+        nickName: app.globalData.userInfo.nickName,
+        avatarUrl: app.globalData.userInfo.avatarUrl,
         accept: accept,
         templateId: templateId
       }
@@ -158,5 +172,14 @@ Page({
       console.info(err)
       wx.hideLoading()
     }
+  },
+
+    /**
+   * 返回
+   */
+  navigateBack: function (e) {
+    wx.navigateBack({
+      delta: 1
+    })
   },
 })

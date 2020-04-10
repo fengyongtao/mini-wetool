@@ -182,9 +182,9 @@ Page({
    * 我的积分
    * @param {} e 
    */
-  bindPoint: async function (e) {
-    this.setData({
-      isShow: true
+  bindPoint: async function (e) {    
+    wx.navigateTo({
+      url: '../mine/point/point'
     })
   },
 

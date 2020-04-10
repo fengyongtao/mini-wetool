@@ -17,6 +17,9 @@
     "pages/admin/subscribe/subscribe",
     "pages/admin/advert/advert",
     "pages/mine/sign/sign",
+    "pages/mine/point/point",
+    "pages/mine/point/pointDetail",
+    "pages/admin/member/member",
     "pages/mine/introduce/introduce"
   ],
   "window": {

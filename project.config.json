@@ -61,6 +61,13 @@
 					"pathName": "pages/mine/mine",
 					"query": "",
 					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/advert/advert",
+					"pathName": "pages/admin/advert/advert",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
